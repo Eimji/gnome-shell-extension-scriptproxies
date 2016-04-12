@@ -1,7 +1,5 @@
 {
-    "description": "Simply, set your proxies with shell scripts.\n\nThe extension allows you to enable/disable a network 
-    proxy for all applications or services you use daily, by simply using a shell script.\n\n For more information and how to
-    use:\nhttps://github.com/Eimji/gnome-shell-extension-scriptproxies",
+    "description": "Simply, set your proxies with shell scripts.\n\nThe extension allows you to enable/disable a network proxy for all applications or services you use daily, by simply using a shell script.\n\n For more information and how to use:\nhttps://github.com/Eimji/gnome-shell-extension-scriptproxies",
     "name": "Script your Proxies",
     "shell-version": [
         "3.10",
