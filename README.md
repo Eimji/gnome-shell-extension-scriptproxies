@@ -1,5 +1,7 @@
 # Gnome Shell extension *Script your Proxies*
 
+![preview image](http://pasteboard.co/8qKMYNV.png "Script your Proxies")
+
 *   The 'Script your proxies' extension allows you to enable/disable a network proxy for all applications 
 or services you use daily, by simply using a shell script. 
 
