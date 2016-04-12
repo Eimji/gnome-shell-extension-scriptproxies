@@ -17,67 +17,71 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: extension.js:129
+#: extension.js:130
 msgid " enabled"
 msgstr " activado"
 
-#: extension.js:132
+#: extension.js:133
 msgid "Error when enabling "
 msgstr "Error para activar "
 
-#: extension.js:135
+#: extension.js:136
 msgid " is already enabled"
 msgstr " ya está en uso"
 
-#: extension.js:152
+#: extension.js:153
 msgid "No proxy"
 msgstr "Sin proxy"
 
-#: extension.js:160
+#: extension.js:161
 msgid "Proxy disabled"
 msgstr "Proxy desactivado"
 
-#: extension.js:163
+#: extension.js:164
 msgid "Error when disabling proxy"
 msgstr "Error para desactivar proxy"
 
-#: extension.js:166
+#: extension.js:167
 msgid "Proxy already disabled"
 msgstr "Proxy ya desactivado"
 
-#: extension.js:176 extension.js:223 extension.js:263
+#: extension.js:177 extension.js:225 extension.js:273
 msgid "Error: text editor "
 msgstr "Error : el editor de texto "
 
-#: extension.js:176 extension.js:223 extension.js:263
+#: extension.js:177 extension.js:225 extension.js:273
 msgid " not installed"
 msgstr " no está instalado"
 
-#: extension.js:190
+#: extension.js:191
 msgid "New proxy"
 msgstr "Nuevo proxy"
 
-#: extension.js:199
+#: extension.js:200
 msgid "Open the folder"
 msgstr "Consultar la carpeta"
 
-#: extension.js:230
+#: extension.js:232
 msgid "Proxy title blank"
 msgstr "Título del proxy vacuidad"
 
-#: extension.js:230
+#: extension.js:232
 msgid "You forgot to set a name for your new proxy, do you want to start again?"
 msgstr "Usted omite mencionar el nombre del nuevo proxy, ¿quieres volver a comenzar?"
 
-#: extension.js:241
+#: extension.js:244
+msgid " currently used, removal is not possible"
+msgstr " usado actualmente, es imposible eliminar"
+
+#: extension.js:247
 msgid "Confirm removal"
 msgstr "Confirmar"
 
-#: extension.js:241
+#: extension.js:247
 msgid "Do you want to delete "
 msgstr "¿Quieres suprimir "
 
-#: extension.js:241
+#: extension.js:247
 msgid "?"
 msgstr "?"
 
