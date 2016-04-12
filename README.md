@@ -63,7 +63,7 @@ on where you are (at home or office).
 ## Installation 
 
 *   If possible, please install from the Gnome Shell Extension website.
-[Install Script your Proxies](https://extensions.gnome.org/ "Gnome Shell extension page")
+[Install Script your Proxies](https://extensions.gnome.org/ "Gnome Shell extension page") **(the extension is under review by Gnome Shell team - please wait)**
 *   Additional information is available at 
 [Github](https://github.com/Eimji/ "Github of the extension")
 
