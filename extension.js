@@ -211,12 +211,12 @@ const SetProxies = new Lang.Class({
             // in the extension folder, create a file named set_'User_entered_proxy_name'.sh
             let newProxyFile = AppDir + '/set_' + userEnteredProxyName.replace(' ', '_') + '.sh';
             let oldProxyFile = AppDir + '/set_' + proxyName.replace(' ', '_') + '.sh';
-
             if (type == 'new') {
                 // add a new proxy
 
                 if (userEnteredProxyName) {
                     Main.Util.trySpawnCommandLine('touch ' + newProxyFile);
+                    Main.Util.trySpawnCommandLine('chmod u+x ' + newProxyFile);
                     try {
                         Main.Util.trySpawnCommandLine(this._defaultEditor + ' ' + newProxyFile);
                     } catch (err) {
