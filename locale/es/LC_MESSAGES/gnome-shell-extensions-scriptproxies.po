@@ -1,0 +1,132 @@
+# Spanish translations for gnome-shell-extensions-scriptproxies package.
+# Copyright (C) 2016 THE gnome-shell-extensions-scriptproxies' COPYRIGHT HOLDER
+# This file is distributed under the same license as the gnome-shell-extensions-scriptproxies package.
+# Patrick <eimji.hvp@gmail.com>, 2016.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: gnome-shell-extensions-scriptproxies\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2016-04-11 11:22+0200\n"
+"PO-Revision-Date: 2016-04-12 15:42+0200\n"
+"Last-Translator: Patrick <eimji.hvp@gmail.com>\n"
+"Language-Team: Spanish\n"
+"Language: es\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+
+#: extension.js:129
+msgid " enabled"
+msgstr " activado"
+
+#: extension.js:132
+msgid "Error when enabling "
+msgstr "Error para activar "
+
+#: extension.js:135
+msgid " is already enabled"
+msgstr " ya está en uso"
+
+#: extension.js:152
+msgid "No proxy"
+msgstr "Sin proxy"
+
+#: extension.js:160
+msgid "Proxy disabled"
+msgstr "Proxy desactivado"
+
+#: extension.js:163
+msgid "Error when disabling proxy"
+msgstr "Error para desactivar proxy"
+
+#: extension.js:166
+msgid "Proxy already disabled"
+msgstr "Proxy ya desactivado"
+
+#: extension.js:176 extension.js:223 extension.js:263
+msgid "Error: text editor "
+msgstr "Error : el editor de texto "
+
+#: extension.js:176 extension.js:223 extension.js:263
+msgid " not installed"
+msgstr " no está instalado"
+
+#: extension.js:190
+msgid "New proxy"
+msgstr "Nuevo proxy"
+
+#: extension.js:199
+msgid "Open the folder"
+msgstr "Consultar la carpeta"
+
+#: extension.js:230
+msgid "Proxy title blank"
+msgstr "Título del proxy vacuidad"
+
+#: extension.js:230
+msgid "You forgot to set a name for your new proxy, do you want to start again?"
+msgstr "Usted omite mencionar el nombre del nuevo proxy, ¿quieres volver a comenzar?"
+
+#: extension.js:241
+msgid "Confirm removal"
+msgstr "Confirmar"
+
+#: extension.js:241
+msgid "Do you want to delete "
+msgstr "¿Quieres suprimir "
+
+#: extension.js:241
+msgid "?"
+msgstr "?"
+
+#: editProxyDialog.js:26 editProxyDialog.js:40 editProxyDialog.js:59
+msgid "Cancel"
+msgstr "Cancelar"
+
+#: editProxyDialog.js:30
+msgid "Add proxy"
+msgstr "Añadir proxy"
+
+#: editProxyDialog.js:36
+msgid "Enter the name for the new proxy"
+msgstr "Escriba el nombre del nuevo proxy"
+
+#: editProxyDialog.js:44
+msgid "Modify script"
+msgstr "Editar script"
+
+#: editProxyDialog.js:47
+msgid "Rename"
+msgstr "Renombrar"
+
+#: editProxyDialog.js:53
+msgid "Modify the proxy script."
+msgstr "Edite el script del proxy."
+
+#: editProxyDialog.js:53
+msgid "Or rename it (leave blank to remove the proxy)."
+msgstr "O cambie el nombre (el campo en blanco para suprimir)."
+
+#: editProxyDialog.js:63
+msgid "OK"
+msgstr "OK"
+
+#: editProxyDialog.js:69
+msgid "To edit your proxy script,"
+msgstr "Parar editar el proxy,"
+
+#: editProxyDialog.js:69
+msgid "please provide the binary name of your text editor."
+msgstr "escriba el nombre de un programa de edición de texto."
+
+#: confirmDialog.js:18
+msgid "No"
+msgstr "No"
+
+#: confirmDialog.js:19
+msgid "Yes"
+msgstr "Sí"
+
+

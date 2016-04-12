@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<schemalist gettext-domain="gnome-shell-extensions-scriptproxies">
+    <schema id="org.gnome.shell.extensions.scriptproxies" path="/org/gnome/shell/extensions/scriptproxies/">
+        <key type="s" name="active-proxy">
+            <default>'No proxy'</default>
+            <summary>Active proxy</summary>
+            <description>This proxy configuration is currently running.</description>
+        </key>
+        <key type="s" name="default-editor">
+            <default>'gedit'</default>
+            <summary>Default text editor</summary>
+            <description>This allows to specify the text editor used for editing a proxy script.</description>
+        </key>
+        <key type="b" name="in-development">
+            <default>false</default>
+            <summary>Set this boolean variable only for use in development</summary>
+            <description>Only for the extension development: when enabling, this allows to have an entry 'Open the folder' in the extension menu, so as to have a rapid access to the extension folder. As normal users, do not use and do not set to true.</description>
+        </key>
+    </schema>
+</schemalist>

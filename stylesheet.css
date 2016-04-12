@@ -1,0 +1,11 @@
+.setProxies-button {
+    box-shadow: none;
+}
+
+.edit-button {
+    padding-left: 55px;
+}
+
+.edit-button:hover {
+    color: #fff;
+}
