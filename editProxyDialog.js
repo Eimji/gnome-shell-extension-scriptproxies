@@ -28,7 +28,7 @@ const EditProxyDialog = new Lang.Class({
                 key: Clutter.Escape
             }, {
                 label: _('Add proxy'),
-                action: Lang.bind(this, this._onOkButton)
+                action: Lang.bind(this, this._addButton)
             }];
 
             label = new St.Label({
@@ -90,7 +90,12 @@ const EditProxyDialog = new Lang.Class({
         this._entryText.connect('key-press-event', Lang.bind(this, function(o, e) {
             let symbol = e.get_key_symbol();
             if (symbol == Clutter.Return || symbol == Clutter.KP_Enter) {
-                this._onOkButton();
+                if (this.action == 'add')
+                    this._addButton();
+                else if (this.action == 'edit')
+                    this._renameButton();
+                else
+                    this._onSetEditorButton();
             }
         }));
     },
@@ -103,7 +108,7 @@ const EditProxyDialog = new Lang.Class({
         this.close();
     },
 
-    _onOkButton: function() {
+    _addButton: function() {
         this.callback(this._entryText.get_text(), 'new');
         this.close();
     },

@@ -114,17 +114,18 @@ const SetProxies = new Lang.Class({
         while ((file = files.next_file(null))) {
             fileName = file.get_name();
             // name of a proxy script should be started with "set_" and ended with ".sh":
-            // name format: set_My_Proxy_Name.sh, e.g. set_Orange_proxy.sh
+            // name format for the script: set_My_Proxy_Name.sh, e.g. set_Office_proxy.sh 
+            // name for the proxy is then 'Office proxy'
             if (strStartsWith(fileName, 'set_') && strEndsWith(fileName, '.sh')) {
                 let editButton = this._createButton(EditIcon);
 
-                let proxyName = fileName.replace('set_', '').replace('.sh', '').replace('_', ' ');
+                let proxyName = fileName.replace('set_', '').replace('.sh', '').replace(/_/g, ' ');
                 let newProxy = new ProxiesMenuItem(proxyName);
                 newProxy.connect('activate', Lang.bind(this, function() {
                     this.menu.close();
                     if (this._activeProxy != proxyName)
                         try {
-                            Main.Util.trySpawnCommandLine(AppDir + '/set_' + proxyName.replace(' ', '_') + '.sh');
+                            Main.Util.trySpawnCommandLine(AppDir + '/set_' + proxyName.replace(/ /g,'_') + '.sh');
                             this._icon.icon_name = EnabledIcon;
                             Main.notify(proxyName + _(' enabled'));
                             this._settings.set_string(ACTIVE_PROXY, proxyName);
@@ -209,8 +210,9 @@ const SetProxies = new Lang.Class({
     _launchEditProxyDialog: function(action, proxyName) {
         let editProxyDialog = new EditProxyDialog.EditProxyDialog(Lang.bind(this, function(userEnteredProxyName, type) {
             // in the extension folder, create a file named set_'User_entered_proxy_name'.sh
-            let newProxyFile = AppDir + '/set_' + userEnteredProxyName.replace(' ', '_') + '.sh';
-            let oldProxyFile = AppDir + '/set_' + proxyName.replace(' ', '_') + '.sh';
+            let newProxyFile = AppDir + '/set_' + userEnteredProxyName.replace(/ /g,'_') + '.sh';
+            let oldProxyFile = AppDir + '/set_' + proxyName.replace(/ /g,'_') + '.sh';
+            
             if (type == 'new') {
                 // add a new proxy
 
@@ -236,17 +238,25 @@ const SetProxies = new Lang.Class({
             } else if (type == 'rename') {
                 // rename an existing proxy
 
-                if (strEndsWith(newProxyFile, 'set_.sh')) {
-                    // requires a confirmation from user before removing
-                    let confirmDialog = new ConfirmDialog.ConfirmDialog(_('Confirm removal'), _('Do you want to delete ') + proxyName + _('?'), Lang.bind(this, function() {
-                        Main.Util.trySpawnCommandLine('rm ' + oldProxyFile);
-                        this._updateMenu();
-                    }));
-                    confirmDialog.open();
+                if (userEnteredProxyName == '') {
+                    if (this._activeProxy == proxyName) {
+                        // proxy is in use
+                        Main.notify(proxyName + _(' currently used, removal is not possible'));
+                    } else {
+                        // requires a confirmation from user before removing
+                        let confirmDialog = new ConfirmDialog.ConfirmDialog(_('Confirm removal'), _('Do you want to delete ') + proxyName + _('?'), Lang.bind(this, function() {
+                            Main.Util.trySpawnCommandLine('rm ' + oldProxyFile);
+                            this._updateMenu();
+                        }));
+                        confirmDialog.open();
+                    }
 
                 } else {
                     if (newProxyFile != oldProxyFile) {
                         Main.Util.trySpawnCommandLine('mv ' + oldProxyFile + ' ' + newProxyFile);
+                        if (this._activeProxy == proxyName)
+                            // proxy is in use, update the schema
+                            this._activeProxy = userEnteredProxyName;
                         this._updateMenu();
                     }
                 }
