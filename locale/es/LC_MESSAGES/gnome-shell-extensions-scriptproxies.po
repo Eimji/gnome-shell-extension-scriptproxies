@@ -17,71 +17,75 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 "Plural-Forms: nplurals=2; plural=(n != 1);\n"
 
-#: extension.js:130
+#: extension.js:136
 msgid " enabled"
 msgstr " activado"
 
-#: extension.js:133
+#: extension.js:139
 msgid "Error when enabling "
 msgstr "Error para activar "
 
-#: extension.js:136
+#: extension.js:142
 msgid " is already enabled"
 msgstr " ya está en uso"
 
-#: extension.js:153
+#: extension.js:159
 msgid "No proxy"
 msgstr "Sin proxy"
 
-#: extension.js:161
+#: extension.js:167
 msgid "Proxy disabled"
 msgstr "Proxy desactivado"
 
-#: extension.js:164
+#: extension.js:170
 msgid "Error when disabling proxy"
 msgstr "Error para desactivar proxy"
 
-#: extension.js:167
+#: extension.js:173
 msgid "Proxy already disabled"
 msgstr "Proxy ya desactivado"
 
-#: extension.js:177 extension.js:225 extension.js:273
+#: extension.js:183 extension.js:233 extension.js:289
 msgid "Error: text editor "
 msgstr "Error : el editor de texto "
 
-#: extension.js:177 extension.js:225 extension.js:273
+#: extension.js:183 extension.js:233 extension.js:289
 msgid " not installed"
 msgstr " no está instalado"
 
-#: extension.js:191
+#: extension.js:197
 msgid "New proxy"
 msgstr "Nuevo proxy"
 
-#: extension.js:200
+#: extension.js:206
 msgid "Open the folder"
 msgstr "Consultar la carpeta"
 
-#: extension.js:232
+#: extension.js:238 extension.js:275
+msgid "Error: the proxy name is already used"
+msgstr "Error : el nombre del proxy ya está en uso"
+
+#: extension.js:243
 msgid "Proxy title blank"
 msgstr "Título del proxy vacuidad"
 
-#: extension.js:232
+#: extension.js:243
 msgid "You forgot to set a name for your new proxy, do you want to start again?"
 msgstr "Usted omite mencionar el nombre del nuevo proxy, ¿quieres volver a comenzar?"
 
-#: extension.js:244
+#: extension.js:255
 msgid " currently used, removal is not possible"
 msgstr " usado actualmente, es imposible eliminar"
 
-#: extension.js:247
+#: extension.js:258
 msgid "Confirm removal"
 msgstr "Confirmar"
 
-#: extension.js:247
+#: extension.js:258
 msgid "Do you want to delete "
 msgstr "¿Quieres suprimir "
 
-#: extension.js:247
+#: extension.js:258
 msgid "?"
 msgstr "?"
 
