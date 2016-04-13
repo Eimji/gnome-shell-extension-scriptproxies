@@ -66,6 +66,11 @@ on where you are (at home or office).
 
 *   If possible, please install from the Gnome Shell Extension website.
 [Install Script your Proxies](https://extensions.gnome.org/ "Gnome Shell extension page")
+*   Manual installation:
+    -   Clone this repository or download the zip archive from [this link](https://github.com/Eimji/gnome-shell-extension-scriptproxies/archive/master.zip "Code source archive")
+    -   Extract, copy or move all the files and folders to the directory ~/.local/share/gnome-shell/extensions/scriptproxies@patrick.eimji.com/ (only this directory name will work)
+    -   Enable the extension with *gnome-tweak-tool* (e.g. by running *gnome-tweak-tool* in a terminal) 
+    -   (IMPORTANT: do not modify yourself the name of your proxy files directly in the folder *scriptproxies@patrick.eimji.com*. This will break the extension. ONLY rename the proxy with the GUI extension button.)
 *   Additional information is available at 
 [Github](https://github.com/Eimji/gnome-shell-extension-scriptproxies "Github of the extension")
 
