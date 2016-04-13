@@ -72,7 +72,7 @@ const SetProxies = new Lang.Class({
     _init: function() {
         this.parent(0.0, 'Set Proxies');
 
-        // schema org.gnome.shell.extensions.com.eimji.setproxies for saving settings
+        // schema org.gnome.shell.extensions.scriptproxies for saving settings
         this._settings = Settings.getSettings(SCHEMA_PATH);
         this._activeProxy = this._settings.get_string(ACTIVE_PROXY);
         this._defaultEditor = this._settings.get_string(DEFAULT_EDITOR);
@@ -95,6 +95,12 @@ const SetProxies = new Lang.Class({
 
         this.popupMenu = new ScrollablePopupMenu(this.actor, St.Align.START, St.Side.TOP);
         this.setMenu(this.popupMenu);
+
+        let noProxyFile = GLib.build_filenamev([AppDir, 'unsetProxy.sh']);
+        if (!GLib.file_test(noProxyFile, GLib.FileTest.EXISTS)) {
+            GLib.file_set_contents(noProxyFile, '');
+            Main.Util.trySpawnCommandLine('chmod u+x ' + noProxyFile);
+        }
 
         this._updateMenu();
     },
@@ -217,15 +223,20 @@ const SetProxies = new Lang.Class({
                 // add a new proxy
 
                 if (userEnteredProxyName) {
-                    Main.Util.trySpawnCommandLine('touch ' + newProxyFile);
-                    Main.Util.trySpawnCommandLine('chmod u+x ' + newProxyFile);
-                    try {
-                        Main.Util.trySpawnCommandLine(this._defaultEditor + ' ' + newProxyFile);
-                    } catch (err) {
-                        Main.notify(_('Error: text editor ') + this._defaultEditor + _(' not installed'));
-                        this._launchSetEditorDialog();
+                    if (!GLib.file_test(newProxyFile, GLib.FileTest.EXISTS)) {
+                        GLib.file_set_contents(newProxyFile, '');
+                        //Main.Util.trySpawnCommandLine('touch ' + newProxyFile);
+                        Main.Util.trySpawnCommandLine('chmod u+x ' + newProxyFile);
+                        try {
+                            Main.Util.trySpawnCommandLine(this._defaultEditor + ' ' + newProxyFile);
+                        } catch (err) {
+                            Main.notify(_('Error: text editor ') + this._defaultEditor + _(' not installed'));
+                            this._launchSetEditorDialog();
+                        }
+                        this._updateMenu();
+                    } else {
+                        Main.notify(_('Error: the proxy name is already used'));
                     }
-                    this._updateMenu();
                 } else {
                     //user forgets to set a name for the new proxy 
                     // push an alert to the user!
@@ -253,11 +264,16 @@ const SetProxies = new Lang.Class({
 
                 } else {
                     if (newProxyFile != oldProxyFile) {
-                        Main.Util.trySpawnCommandLine('mv ' + oldProxyFile + ' ' + newProxyFile);
-                        if (this._activeProxy == proxyName)
-                            // proxy is in use, update the schema
-                            this._activeProxy = userEnteredProxyName;
-                        this._updateMenu();
+                        if (!GLib.file_test(newProxyFile, GLib.FileTest.EXISTS)) {
+                            Main.Util.trySpawnCommandLine('mv ' + oldProxyFile + ' ' + newProxyFile);
+                            if (this._activeProxy == proxyName)
+                                // proxy is in use, update the schema
+                                this._activeProxy = userEnteredProxyName;
+                            
+                            this._updateMenu();
+                        } else {
+                            Main.notify(_('Error: the proxy name is already used'));
+                        }
                     }
                 }
 
