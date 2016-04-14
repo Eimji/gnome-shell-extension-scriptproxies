@@ -132,7 +132,6 @@ const SetProxies = new Lang.Class({
                     if (this._activeProxy != proxyName)
                         try {
                             Main.Util.trySpawnCommandLine(AppDir + '/set_' + proxyName.replace(/ /g,'_') + '.sh');
-                            this._icon.icon_name = EnabledIcon;
                             Main.notify(proxyName + _(' enabled'));
                             this._settings.set_string(ACTIVE_PROXY, proxyName);
                         } catch (err) {
@@ -163,7 +162,6 @@ const SetProxies = new Lang.Class({
             if (this._activeProxy != 'No proxy')
                 try {
                     Main.Util.trySpawnCommandLine(AppDir + '/unsetProxy.sh');
-                    this._icon.icon_name = DisabledIcon;
                     Main.notify(_('Proxy disabled'));
                     this._settings.set_string(ACTIVE_PROXY, 'No proxy');
                 } catch (err) {
@@ -200,6 +198,8 @@ const SetProxies = new Lang.Class({
         }));
 
         this.menu.addMenuItem(addNewProxy);
+
+        this._icon.icon_name = this._activeProxy == 'No proxy' ? DisabledIcon : EnabledIcon;
 
         // This is only for development, for my own use.
         if (this._inDevelopment) {
