@@ -95,6 +95,9 @@ used to undo all the settings for a proxy.
 *   Comments, suggestions or requests: Twitter @Eimji or email eimji.hvp@gmail.com
 *   Bug reports: on the Github page of the extension. 
 
+## Upcoming
+
+*   Add VPN connection support.
 
 ## Licence
 
